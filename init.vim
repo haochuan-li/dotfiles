@@ -1,4 +1,4 @@
-" Fundamentals "{{{
+" Fundamentals {{{
 " ---------------------------------------------------------------------
 
 " init autocmd
@@ -24,7 +24,7 @@ set laststatus=2
 set scrolloff=10
 set expandtab
 "let loaded_matchparen = 1
-set shell=fish
+set shell=zsh
 set backupskip=/tmp/*,/private/tmp/*
 
 " incremental substitution (neovim)
@@ -67,6 +67,9 @@ set formatoptions+=r
 
 " Highlights "{{{
 " ---------------------------------------------------------------------
+" set rainbow brackets
+" let g:rainbow_active = 1
+
 set cursorline
 "set cursorcolumn
 
@@ -90,6 +93,7 @@ endif
 
 " File types "{{{
 " ---------------------------------------------------------------------
+au BufNewFile,BufRead *.rb,*.rbw setf ruby
 " JavaScript
 au BufNewFile,BufRead *.es6 setf javascript
 " TypeScript
@@ -99,10 +103,12 @@ au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.mdx set filetype=markdown
 " Flow
 au BufNewFile,BufRead *.flow set filetype=javascript
-" Fish
-au BufNewFile,BufRead *.fish set filetype=fish
+" Python
+au BufNewFile,BufRead *.py set filetype=python
+" Go
+au BufNewFile,BufRead *.go set filetype=go
 
-set suffixesadd=.js,.es,.jsx,.json,.css,.less,.sass,.styl,.php,.py,.md
+set suffixesadd=.js,.es,.jsx,.json,.css,.less,.sass,.styl,.php,.py,.md,.go
 
 autocmd FileType coffee setlocal shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2

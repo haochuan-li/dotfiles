@@ -6,7 +6,6 @@ call plug#begin()
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-
 if has("nvim")
   Plug 'hoob3rt/lualine.nvim'
   Plug 'kristijanhusak/defx-git'
@@ -28,10 +27,13 @@ if has("nvim")
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'windwp/nvim-autopairs'
   Plug 'windwp/nvim-ts-autotag'
+  Plug 'numToStr/Comment.nvim'
+  Plug 'mfussenegger/nvim-lint'
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+  Plug 'p00f/nvim-ts-rainbow'
 endif
 
-Plug 'groenewege/vim-less', { 'for': 'less' }
+" let g:pymode = 1
+
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
-
 call plug#end()
-

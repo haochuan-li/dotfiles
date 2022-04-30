@@ -94,6 +94,7 @@ nvim_lsp.flow.setup {
   capabilities = capabilities
 }
 
+
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
@@ -102,7 +103,7 @@ nvim_lsp.tsserver.setup {
 
 nvim_lsp.diagnosticls.setup {
   on_attach = on_attach,
-  filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'pandoc' },
+  filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'pandoc', 'python', 'go'},
   init_options = {
     linters = {
       eslint = {
@@ -123,7 +124,32 @@ nvim_lsp.diagnosticls.setup {
         securities = {
           [2] = 'error',
           [1] = 'warning'
-        }
+        } 
+      },
+      pylint = {
+        sourceName = "pylint",
+        command = "pylint",
+        args = {"--output-format","text","--score","no","--msg-template","'{line}:{column}:{category}:{msg} ({msg_id}:{symbol})'","%file"},
+        formatPattern = {
+          "^(\\d+?):(\\d+?):([a-z]+?):(.*)$",
+          {
+            line = 1,
+            column = 2,
+            security = 3,
+            message = 4
+          }
+        },
+        rootPatterns = {".git", "pyproject.toml", "setup.py"},
+        securities = {
+          informational = 'hint',
+          refactor = 'info',
+          convention = 'info',
+          warning = 'warning',
+          error = 'error',
+          fatal = 'error'
+        },
+        offsetColumn = 1,
+        formatLines = 1
       },
     },
     filetypes = {
@@ -144,6 +170,10 @@ nvim_lsp.diagnosticls.setup {
         rootPatterns = { '.git' },
         -- requiredFiles: { 'prettier.config.js' },
         args = { '--stdin', '--stdin-filepath', '%filename' }
+      },
+      autopep8 = {
+        command = "autopep8",
+        args = {'-'}
       }
     },
     formatFiletypes = {
@@ -156,6 +186,7 @@ nvim_lsp.diagnosticls.setup {
       typescript = 'prettier',
       typescriptreact = 'prettier',
       json = 'prettier',
+      python = 'autopep8',
     }
   }
 }

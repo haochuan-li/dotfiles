@@ -6,7 +6,7 @@ if (not status) then return end
 lsp_installer.on_server_ready(function(server)
   local opts = {}
 
-  -- (optional) Customize the options passed to the server
+    -- (optional) Customize the options passed to the server
   -- if server.name == "tsserver" then
   --     opts.root_dir = function() ... end
   -- end
