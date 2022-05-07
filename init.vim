@@ -20,11 +20,12 @@ set nobackup
 set hlsearch
 set showcmd
 set cmdheight=1
+set autowrite
 set laststatus=2
 set scrolloff=10
 set expandtab
 "let loaded_matchparen = 1
-set shell=zsh
+set shell=fish
 set backupskip=/tmp/*,/private/tmp/*
 
 " incremental substitution (neovim)

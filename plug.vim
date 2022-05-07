@@ -29,8 +29,11 @@ if has("nvim")
   Plug 'windwp/nvim-ts-autotag'
   Plug 'numToStr/Comment.nvim'
   Plug 'mfussenegger/nvim-lint'
-  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+  Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
   Plug 'p00f/nvim-ts-rainbow'
+  Plug 'AndrewRadev/splitjoin.vim'
+  Plug 'SirVer/ultisnips'
+  Plug 'cjrh/vim-conda'
 endif
 
 " let g:pymode = 1
