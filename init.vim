@@ -108,6 +108,8 @@ au BufNewFile,BufRead *.flow set filetype=javascript
 au BufNewFile,BufRead *.py set filetype=python
 " Go
 au BufNewFile,BufRead *.go set filetype=go
+" CS
+au BufNewFile,BufRead *.cs set filetype=csharp
 
 set suffixesadd=.js,.es,.jsx,.json,.css,.less,.sass,.styl,.php,.py,.md,.go
 
